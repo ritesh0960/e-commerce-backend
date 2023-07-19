@@ -13,8 +13,12 @@ import org.springframework.data.rest.core.mapping.HttpMethods;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.util.pattern.PathPattern;
 
+import com.ritesh.ecommerce.entities.Country;
+import com.ritesh.ecommerce.entities.Order;
 import com.ritesh.ecommerce.entities.Product;
+import com.ritesh.ecommerce.entities.State;
 import com.ritesh.ecommerce.entities.productCategory;
 
 import jakarta.persistence.EntityManager;
@@ -48,10 +52,28 @@ public class restConfig implements RepositoryRestConfigurer{
 	      .withItemExposure((metdata, httpMethods)->httpMethods.disable(theUnsupportedActions))
 	      .withCollectionExposure((metdata, HttpMethods)->HttpMethods.disable(theUnsupportedActions));
 		
+		config.getExposureConfiguration()
+	      .forDomainType(Country.class)
+	      .withItemExposure((metdata, httpMethods)->httpMethods.disable(theUnsupportedActions))
+	      .withCollectionExposure((metdata, HttpMethods)->HttpMethods.disable(theUnsupportedActions));
+		
+		
+		config.getExposureConfiguration()
+	      .forDomainType(State.class)
+	      .withItemExposure((metdata, httpMethods)->httpMethods.disable(theUnsupportedActions))
+	      .withCollectionExposure((metdata, HttpMethods)->HttpMethods.disable(theUnsupportedActions));
+		
+		config.getExposureConfiguration()
+	      .forDomainType(Order.class)
+	      .withItemExposure((metdata, httpMethods)->httpMethods.disable(theUnsupportedActions))
+	      .withCollectionExposure((metdata, HttpMethods)->HttpMethods.disable(theUnsupportedActions));
+		
+		
 	//	RepositoryRestConfigurer.super.configureRepositoryRestConfiguration(config, cors);
 		
 		
 		exposeIds(config);
+	
 	}
 	
 	

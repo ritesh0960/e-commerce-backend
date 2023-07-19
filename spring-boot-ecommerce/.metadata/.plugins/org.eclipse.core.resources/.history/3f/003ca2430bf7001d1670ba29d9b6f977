@@ -1,0 +1,6 @@
+package com.ritesh.ecommerce.repositories;
+
+
+public class countryRepository {
+
+}

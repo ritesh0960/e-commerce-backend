@@ -1,0 +1,9 @@
+package com.ritesh.ecommerce.repositories;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ritesh.ecommerce.entities.Order;
+
+public interface orderRepository extends JpaRepository<Order, Long>{
+      Order 
+}

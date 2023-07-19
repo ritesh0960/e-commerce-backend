@@ -1,0 +1,5 @@
+package com.ritesh.ecommerce.config;
+
+public class SecurityConfiguration {
+
+}

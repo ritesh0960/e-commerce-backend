@@ -1,0 +1,11 @@
+package com.ritesh.ecommerce.repositories;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ritesh.ecommerce.entities.Order;
+
+public interface orderRepository extends JpaRepository<Order, Long>{
+      List<Order> findByEmail(String theEmail);
+}

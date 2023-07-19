@@ -1,0 +1,5 @@
+package com.ritesh.ecommerce.repositories;
+
+public interface orderRepository {
+
+}
